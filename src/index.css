@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+
+  .rbc-time-slot {
+    min-height: 40px;
+    max-height: 40px;
+  }
+
+  .rbc-event-label {
+    display: none !important;
+  }
+
+  .rbc-event {
+    background: transparent !important;
+    border: none !important;
+  }
+}
+
+/* Hide scrollbar for webkit browsers (Chrome, Safari) */
+.rbc-time-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.rbc-time-content {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* For all browsers */
+.rbc-time-content {
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  overflow-y: scroll; /* Ensure it can still scroll */
+}
