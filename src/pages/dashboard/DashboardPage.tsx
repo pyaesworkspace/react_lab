@@ -3,6 +3,7 @@ import { ActionIcon, Box, Group } from "@mantine/core";
 import { IconPencil, IconTrash } from "@tabler/icons-react";
 import { useGetAllUsers } from "./hooks";
 import { MRT_ColumnDef } from "mantine-react-table";
+import { DeleteButton, EditButton } from "./components/FormModal";
 
 const columns: MRT_ColumnDef<User>[] = [
   {
@@ -32,20 +33,8 @@ export function DashboardPage() {
         renderRowActions={({ row }) => {
           return (
             <Group>
-              <ActionIcon
-                variant="subtle"
-                onClick={() => console.log(row.original)}
-              >
-                {" "}
-                {<IconPencil />}{" "}
-              </ActionIcon>
-              <ActionIcon
-                variant="subtle"
-                onClick={() => console.log(row.original)}
-              >
-                {" "}
-                {<IconTrash />}{" "}
-              </ActionIcon>
+              <EditButton />
+              <DeleteButton />
             </Group>
           );
         }}
